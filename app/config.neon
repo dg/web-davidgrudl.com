@@ -1,0 +1,12 @@
+common:
+	php:
+		date.timezone: Europe/Prague
+
+	services:
+		twitterDavidGrudl: Twitter(...secret keys...)
+
+		twitterGeekovo: Twitter(...secret keys...)
+
+production < common:
+
+development < common:

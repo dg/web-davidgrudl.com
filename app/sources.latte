@@ -1,0 +1,44 @@
+{layout "@layout.latte"}
+{block #content}
+
+<nav id="menu">
+	<ul>
+		<li><a href="#index-php">index.php</a></li>
+		<li><a href="#config-neon">app/config.neon</a></li>
+		<li><a href="#layout-latte">app/@layout.latte</a></li>
+		<li><a href="#cs-latte">app/cs.latte</a></li>
+		<li><a href="#en-latte">app/en.latte</a></li>
+		<li><a href="#sources-latte">app/sources.latte</a></li>
+		<li><a href="en">back</a></li>
+	</ul>
+</nav>
+
+<div id="content">
+	<section id="soruces">
+		<h1 id="logo" n:block="title">Source codes of this website</h1>
+
+		<p>This site is powered by <a href="http://nette.org">Nette Framework</a> and uses
+		templating engine <b>Latte</b>. See how you can use Nette as a micro-framework.
+		View source codes on <a href="https://github.com/dg/davidgrudl.com">Github</a>.</p>
+	</section>
+
+	<h2 id="index-php">index.php</h2>
+	<pre>{!$template->source('index.php', 'PHP')}</pre>
+
+	<h2 id="config-neon">app/config.neon</h2>
+	<pre>{!$template->source('app/config.neon')}</pre>
+
+	<h2 id="layout-latte">app/@layout.latte</h2>
+	<pre>{!$template->source('app/@layout.latte', 'HTMLCB')}</pre>
+
+	<h2 id="cs-latte">app/cs.latte</h2>
+	<pre>{!$template->source('app/cs.latte', 'HTMLCB')}</pre>
+
+	<h2 id="en-latte">app/en.latte</h2>
+	<pre>{!$template->source('app/en.latte', 'HTMLCB')}</pre>
+
+	<h2 id="sources-latte">app/sources.latte</h2>
+	<pre>{!$template->source('app/sources.latte', 'HTMLCB')}</pre>
+
+	<footer>&copy; David Grudl</footer>
+</div>

@@ -1,0 +1,199 @@
+{layout "@layout.latte"}
+{block #content}
+
+<nav id="menu">
+	<ul>
+		<li><a href="#about">ABOUT ME</a></li>
+		<li><a href="#projects">PROJECTS</a></li>
+		<li><a href="#blog">BLOG</a></li>
+		<li><a href="#interviews">INTERVIEWS</a></li>
+		<li><a href="#talks">TALKS</a></li>
+		<li><a href="#contact">CONTACT</a></li>
+		<li><a href="cs">česky</a></li>
+	</ul>
+</nav>
+
+<div id="content">
+	<section id="about">
+		<h1 id="logo" n:block="title">David Grudl</h1>
+
+		<p><img id="foto" src="{$basePath}/images/david-grudl.jpg" alt="David Grudl"></p>
+
+		{block|texy|indent:2}
+David Grudl is a programmer (PHP since 1999) and publicist, interested in the security of web applications
+and the creation of user interfaces. He is the author of popular open source projects "Nette Framework":http:/nette.org,
+database layer "dibi":http://dibiphp.com, human friendy markup to XHTML converter "Texy!":http://texy.info and others.
+David began to write applications in the DOS era, now focuses solely on web-based applications in PHP. He offers development services,
+training and consultancy on PHP.</p>
+ "více »":#more{/block}
+
+		<div id="more">{block|texy|indent:3}
+Do you really want to know more? All right. David Grudl was born in Břeclav, Czech Republic, even during the period of socialism.
+The first programming experience gained with the "TNS computer":http://www.youtube.com/watch?v=o8IDMf_A6Lo. He graduated on grammar school,
+then he attended high schools in Brno. Occasionally, he worked as a graphic designer for an advertising agency and newspaper typographer.
+
+In 1999 he founded the company selling wireless devices, and began to be interested in web design, because he was stingy to pay
+student to create an e-shop. Web design gradually became his main interest.
+
+In 2004 he launched "La Trine":www.latrine.cz, purely technical blog with overwhelming non-technical articles. Originally
+on the domain dgx.cz, which, however, in 2008 sold at exorbitant price to the new owner. La Trine belongs among the most widely
+read Czech blogs. The author learned to tolerate critical and insulting comments from anonymous.
+
+In early 2005 he released his first open-source library "Texy!":http://texy.info for easy typing and formatting text for the web.
+The library has become popular, it runs on the abundant amount of web sites, from blogs to complex
+e-shops, such as Mall.cz. A year later released the database layer "Dibi":http://dibiphp.com, which also
+met with considerable favor among programmers. A year later comes the biggest project "Nette Framework":http://nette.org.
+
+Unlike previous libraries, Nette Framework became popular even before anyone saw him. It was officially presented at the conference
+*PHP frameworks Autumn 2007*, several months later released. Today is one of the most widely used PHP frameworks in Czechia,
+in the references there are a number of multinational companies. David Grudl offers a public "training Nette Framework":http://www.skoleniphp.cz/skoleni-nette-vyvoj-webovych-aplikaci,
+and "JQuery & AJAX course":http://www.skoleniphp.cz/skoleni-jquery. Around framework was established strong community of programmers who
+meet each month on the "Last Saturday":www.posobota.cz event.
+
+In 2008, David Grudl understand how Twitter works and started to twit as
+"@DavidGrudl":http://twitter.com/DavidGrudl. During Microsoft's conference BUILD 2011 he founded separate account
+"@Geeks":http://twitter.com/geekovo for computer stuff.
+
+In January 2010, he created the web site of President of the Czech Republic "Vaclav Klaus":http://www.klaus.cz that is Nette
+Framework powered. A few months later, he, his girlfriend and dog moved to Prague.{/block}
+		</div>
+
+		<hr>
+
+		<p><a href="files/david-grudl.jpg">Photo for download</a> <small>(licence CC-BY-SA-3.0 &copy; Ivana Dvorská)</small></p>
+	</section>
+
+
+	<section id="projects">
+		<h1>Projects &amp; Startups</h1>
+
+		<div class="box small">
+			<div><a href="http://nette.org" class="img"><img src="{$basePath}/images/nette.jpg" alt="Nette Framework"></a></div>
+		</div>
+
+		<div class="box small">
+			<h2><a href="http://nette.org">Nette Framework</a></h2>
+
+			<p>A popular tool for creating web applications in PHP. Powerful and understandable tool that satisfies
+			the programmers. It eliminates security risks, honors for AJAX, DRY, KISS, MVC and code reuse.</p>
+		</div>
+
+		<div class="box small clear">
+			<h2><a href="http://dibiphp.com">dibi</a></h2>
+			<div>
+				<a href="http://dibiphp.com" class="img"><img src="{$basePath}/images/dibi.jpg" alt="dibi"></a>
+				<p>Dibi is a smart and tiny database abstraction library for PHP 5 with very handy API.</p>
+			</div>
+		</div>
+
+		<div class="box small">
+			<h2><a href="http://texy.info">Texy</a></h2>
+			<div>
+				<a href="http://texy.info" class="img"><img src="{$basePath}/images/texy.jpg" alt="Texy!"></a>
+				<p>Texy is text-to-HTML formatter. It allows you to write
+				structured documents using easy-to-read plain text.</p>
+			</div>
+		</div>
+
+		<div class="box small clear">
+			<h2><a href="http://apigen.org">ApiGen</a></h2>
+			<div>
+				<a href="http://apigen.org" class="img"><img src="{$basePath}/images/apigen.jpg" alt="ApiGen"></a>
+				<p>ApiGen is the tool for creating professional API documentation from PHP 5.4 source code.</p>
+			</div>
+		</div>
+
+		<div class="box small">
+			<h2><a href="http://ne-on.org">NEON</a></h2>
+			<div>
+				<a href="http://ne-on.org" class="img"><img src="{$basePath}/images/neon.png" alt="NEON"></a>
+				<p>NEON is a human friendly data serialization format for programming languages, similar to YAML.</p>
+			</div>
+		</div>
+	</section>
+
+
+	<section id="blog">
+		<h1>Blog</h1>
+
+		<div class="box small">
+			<h2><a href="http://www.latrine.cz">La Trine</a>
+				<a href="http://www.latrine.cz/feed/rss" class="img"><img src="{$basePath}/images/rss.png" alt="RSS FEED"></a></h2>
+
+			<div>
+				<ul>
+				{foreach $template->rss('http://www.latrine.cz/feed/rss')->item as $item}
+				{breakIf $iterations > 5}
+					<li><a href="{$item->link}">{$item->title}</a></li>
+				{/foreach}
+				</ul>
+			</div>
+		</div>
+
+
+		<div class="box small">
+			<h2><a href="http://phpfashion.com">phpFashion</a>
+				<a href="http://phpfashion.com/feed/rss" class="img"><img src="{$basePath}/images/rss.png" alt="RSS FEED"></a></h2>
+
+			<div>
+				<ul>
+				{foreach $template->rss('http://phpfashion.com/feed/rss')->item as $item}
+				{breakIf $iterations > 5}
+					<li><a href="{$item->link}">{$item->title}</a></li>
+				{/foreach}
+				</ul>
+			</div>
+		</div>
+	</section>
+
+
+	<section id="interviews">
+		<h1>Interviews</h1>
+
+		<div class="box">
+			<div>
+				<ul>
+				{foreach $template->rss('http://davidgrudl.com/interviews.xml')->item as $item}
+					<li><span class="date right">{$item->timestamp|date}</span> <a href="{$item->link}" n:tag-if="$item->link">{$item->title}</a></li>
+				{/foreach}
+				</ul>
+			</div>
+		</div>
+	</section>
+
+
+	<section id="talks">
+		<h1>Talks <a href="http://davidgrudl.com/talks.xml" class="img"><img src="{$basePath}/images/rss.png" alt="RSS FEED"></a></h1>
+
+		<div class="box">
+			<div>
+				<ul>
+				{foreach $template->rss('http://davidgrudl.com/talks.xml')->item as $item}
+					<li><span class="date right">{$item->timestamp|date}</span> <a href="{$item->link}" n:tag-if="$item->link">{$item->title}</a>
+					<div class="more">{!$item->{'content:encoded'}}</div></li>
+				{/foreach}
+				</ul>
+			</div>
+		</div>
+	</section>
+
+
+	<section id="contact" class="vcard">
+		<h1>Contact</h1>
+
+		<div class="box small">
+			<h2>Address</h2>
+
+			<div>
+				<p><span class="fn">David Grudl</span><br>
+				<span class="adr"><span class="street-address">Anny Rybníčkové 8</span><br>
+				<span class="postal-code">15500</span> <span class="locality">Praha – Stodůlky</span><br>
+				<span class="country-name">The Czech Republic</span></span></p>
+
+				<p>E-mail <a href="mailto:david&#64;grudl.com" class="email">david&#64;<!---->grudl.com</a></p>
+			</div>
+		</div>
+	</section>
+
+	<footer>&copy; David Grudl</footer>
+</div>

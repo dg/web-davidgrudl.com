@@ -1,0 +1,282 @@
+{layout "@layout.latte"}
+{block #content}
+
+<nav id="menu">
+	<ul>
+		<li><a href="#about">KDO JSEM</a></li>
+		<li><a href="#projects">PROJEKTY</a></li>
+		<li><a href="#trainings">ŠKOLENÍ</a></li>
+		<li><a href="#twitter">TWITTER</a></li>
+		<li><a href="#blog">BLOG</a></li>
+		<li><a href="#interviews">ROZHOVORY</a></li>
+		<li><a href="#talks">PŘEDNÁŠKY</a></li>
+		<li><a href="#contact">KONTAKT</a></li>
+		<li><a href="en">english</a></li>
+	</ul>
+</nav>
+
+<div id="content">
+	<section id="about">
+		<h1 id="logo" n:block="title">David Grudl</h1>
+
+		<p><img id="foto" src="{$basePath}/images/david-grudl.jpg" alt="David Grudl"></p>
+
+		{block|texy|indent:2}
+David Grudl je spisovatel programů, bloger a požitkář. V současné době se jeho život točí hlavně kolem "Nette Framework":http://nette.org,
+na jehož vývoji se s nadšením podílí, a když zrovna neprogramuje, tak píše blogy "La Trine":www.latrine.cz & "phpFashion":http://phpfashion.com
+nebo "školí vývoj webových aplikací":www.skoleniphp.cz. Zajímá se také o grafiku a tvorbu uživatelských rozhraní.
+Pradávno používal nick DGX.
+ "více »":#more{/block}
+
+		<div id="more">{block|texy|indent:3}
+Opravdu chcete vědět více? Dobrá. David Grudl se narodil v Břeclavi ještě za dob socialismu. První programátorskou
+zkušenost získal s "počítači TNS":http://www.youtube.com/watch?v=o8IDMf_A6Lo. Vystudoval gymnázium, kde dosáhl takové
+popularity, že učitelé jeho odchod oslavili velkolepým večírkem. Poté odešel studovat vysoké školy do Brna.
+Příležitostně se živil jako grafik v reklamní agentuře a sázel noviny Břeclavsko.
+
+V roce 1999 založil firmu prodávající bezdrátové modemy a začal se také zajímat o webdesign, neboť byl lakomý zaplatit
+15 tisíc studentovi za vytvoření e-shopu. Tvorba webů a webových aplikací se postupně stala jeho hlavním zájmem.
+
+Roku 2004 spustil "La Trine":www.latrine.cz, ryze odborný blog s drtivou převahou neodborných článků. Původně
+na doméně dgx.cz, kterou však i s blogem prodal roku 2008 za nehoráznou cenu novému majiteli. Blogování ho mělo naučit
+lépe psát, což se nestalo, kupodivu i tak patřilo La Trine mezi nejčtenější české blogy. Autora naučilo snášet kritické
+a urážlivé komentáře od kolemjdoucích anonymů.
+
+Začátkem roku 2005 vydal svůj první počin na poli open-source, tedy volně šiřitelných programů. Šlo o knihovnu "Texy!":http://texy.info
+usnadňující psaní a formátování textů pro web. Knihovna se stala populární, používá ji hojné množství webů, počínaje blogy až po komplexní
+e-shopy, jako například Mall.cz. O rok později zveřejňuje databázovou vrstvu "Dibi":http://dibiphp.com, která se taktéž
+setkala se přízní programátorů. O další rok později přichází na řadu zatím největší projekt "Nette Framework":http://nette.org.
+
+Na rozdíl od předchozích knihoven se Nette Framework stal oblíbený ještě dřív, než ho kdokoliv viděl. Oficiálně byl
+představen na konferenci *PHP frameworky podzim 2007*, o několik měsíců později i zveřejněn. Dnes se řadí mezi
+nejpoužívanější PHP frameworky u nás, mezi referencemi najdeme i řadu nadnárodních společností. David Grudl vypisuje
+veřejná "školení Nette Framework":http://www.skoleniphp.cz/skoleni-nette-vyvoj-webovych-aplikaci, nejnověji i
+"kurzy jQuery & AJAX":http://www.skoleniphp.cz/skoleni-jquery. Kolem frameworku vznikla silná komunita programátorů, kteří
+se pravidelně scházejí každý měsíc na tzv. "Poslední sobotě":www.posobota.cz.
+
+V roce 2008 David Grudl pochopil, jak funguje Twitter, omezil blogování a začal twítovat jako
+"@DavidGrudl":http://twitter.com/DavidGrudl, během Microsoftí konference BUILD 2011 si zakládá ještě zvlášť účet
+"@geekovo":http://twitter.com/geekovo, kam píše počítačové záležitosti, aby jimi neotravoval slušné lidi.
+
+V lednu 2010 vytvořil web prezidenta republiky "Václava Klause":http://www.klaus.cz, který běží na Nette
+Framework. O pár měsíců později se s přítelkyní a psem stěhují do Prahy, kde, pokud neumřeli, žijí dodnes.
+{/block}
+		</div>
+
+		<hr>
+
+		<p><a href="files/david-grudl.jpg">Foto ke stažení</a> <small>(licence CC-BY-SA-3.0 &copy; Ivana Dvorská)</small></p>
+	</section>
+
+
+	<section id="projects">
+		<h1>Projekty &amp; Startupy</h1>
+
+		<div class="box small">
+			<div><a href="http://nette.org" class="img"><img src="{$basePath}/images/nette.jpg" alt="Nette Framework"></a></div>
+		</div>
+
+		<div class="box small">
+			<h2><a href="http://nette.org">Nette Framework</a></h2>
+
+			<p>Populární nástroj pro vytváření webových aplikací v PHP. Je srozumitelný, při programování vám vychází
+			vstříc a nepřidělává vrásky. Eliminuje bezpečnostní rizika, ctí AJAX, DRY, KISS, MVC a znovupoužitelnost.</p>
+		</div>
+
+		<div class="box small clear">
+			<h2><a href="http://dibiphp.com">dibi</a></h2>
+			<div>
+				<a href="http://dibiphp.com" class="img"><img src="{$basePath}/images/dibi.jpg" alt="dibi"></a>
+				<p>Dibi je chytrý a malý databázový layer pro PHP 5 s velmi šikovným API.</p>
+			</div>
+		</div>
+
+		<div class="box small">
+			<h2><a href="http://texy.info">Texy</a></h2>
+			<div>
+				<a href="http://texy.info" class="img"><img src="{$basePath}/images/texy.jpg" alt="Texy!"></a>
+				<p>Texy je program, díky kterému můžete snadno psát texty na webové stránky.</p>
+			</div>
+		</div>
+
+		<div class="box small clear">
+			<h2><a href="http://apigen.org">ApiGen</a></h2>
+			<div>
+				<a href="http://apigen.org" class="img"><img src="{$basePath}/images/apigen.jpg" alt="ApiGen"></a>
+				<p>ApiGen je generátor profesionálních API dokumentací pro projekty napsané v PHP.</p>
+			</div>
+		</div>
+
+		<div class="box small">
+			<h2><a href="http://ne-on.org">NEON</a></h2>
+			<div>
+				<a href="http://ne-on.org" class="img"><img src="{$basePath}/images/neon.png" alt="NEON"></a>
+				<p>NEON je formát pro serializaci strukturovaných dat do lidsky srozumitelné podoby.</p>
+			</div>
+		</div>
+	</section>
+
+
+	<section id="trainings">
+		<h1><a href="http://www.skoleniphp.cz"><span>Školení a kurzy</span> www.skoleniphp.cz</a>
+			<a href="http://www.skoleniphp.cz/feed.xml" class="img"><img src="{$basePath}/images/rss.png" alt="RSS FEED"></a></h1>
+
+		<div class="box">
+			<div>
+				<ul>
+				{foreach $template->rss('http://www.skoleniphp.cz/feed.xml')->item as $item}
+					<li><span class="date">{$item->description}</span><br><a href="{$item->link}">Školení {$item->title}</a></li>
+				{/foreach}
+				</ul>
+			</div>
+		</div>
+	</section>
+
+
+	<section id="twitter">
+		<h1><a href="http://twitter.com/DavidGrudl"><span>Twitter</span> @DavidGrudl</a></h1>
+
+		<div class="box">
+			<div>
+				<ul>
+				{foreach $context->twitterDavidGrudl->load(Twitter::ME)->status as $status}
+				{continueIf (string) $status->in_reply_to_status_id}
+				{breakIf $iterations > 3}
+					<li>{!$status->text|tweet}</li>
+				{/foreach}
+				</ul>
+
+				<p><a href="http://twitter.com/DavidGrudl">…more on Twitter</a> or
+				<a href="https://plus.google.com/118037652330553015627/posts">Google+</a></p>
+			</div>
+		</div>
+
+		<h1><a href="http://twitter.com/geekovo"><span>Twitter</span> @geekovo</a></h1>
+
+		<div class="box">
+			<div>
+				<ul>
+				{foreach $context->twitterGeekovo->load(Twitter::ME)->status as $status}
+				{continueIf (string) $status->in_reply_to_status_id}
+				{breakIf $iterations > 3}
+					<li>{!$status->text|tweet}</li>
+				{/foreach}
+				</ul>
+				<p><a href="http://twitter.com/geekovo">…more on Twitter</a></p>
+			</div>
+		</div>
+	</section>
+
+
+	<section id="blog">
+		<h1>Blog</h1>
+
+		<div class="box small">
+			<h2><a href="http://www.latrine.cz">La Trine</a>
+				<a href="http://www.latrine.cz/feed/rss" class="img"><img src="{$basePath}/images/rss.png" alt="RSS FEED"></a></h2>
+
+			<div>
+				<ul>
+				{foreach $template->rss('http://www.latrine.cz/feed/rss')->item as $item}
+				{breakIf $iterations > 5}
+					<li><a href="{$item->link}">{$item->title}</a></li>
+				{/foreach}
+				</ul>
+			</div>
+		</div>
+
+
+		<div class="box small">
+			<h2><a href="http://phpfashion.com">phpFashion</a>
+				<a href="http://phpfashion.com/feed/rss" class="img"><img src="{$basePath}/images/rss.png" alt="RSS FEED"></a></h2>
+
+			<div>
+				<ul>
+				{foreach $template->rss('http://phpfashion.com/feed/rss')->item as $item}
+				{breakIf $iterations > 5}
+					<li><a href="{$item->link}">{$item->title}</a></li>
+				{/foreach}
+				</ul>
+			</div>
+		</div>
+	</section>
+
+
+	<section id="interviews">
+		<h1>Rozhovory</h1>
+
+		<div class="box">
+			<div>
+				<ul>
+				{foreach $template->rss('http://davidgrudl.com/interviews.xml')->item as $item}
+					<li><span class="date right">{$item->timestamp|date}</span> <a href="{$item->link}" n:tag-if="$item->link">{$item->title}</a></li>
+				{/foreach}
+				</ul>
+			</div>
+		</div>
+	</section>
+
+
+	<section id="talks">
+		<h1>Přednášky <a href="http://davidgrudl.com/talks.xml" class="img"><img src="{$basePath}/images/rss.png" alt="RSS FEED"></a></h1>
+
+		<div class="box">
+			<div>
+				<ul>
+				{foreach $template->rss('http://davidgrudl.com/talks.xml')->item as $item}
+					<li><span class="date right">{$item->timestamp|date}</span> <a href="{$item->link}" n:tag-if="$item->link">{$item->title}</a>
+					<div class="more">{!$item->{'content:encoded'}}</div></li>
+				{/foreach}
+				</ul>
+			</div>
+		</div>
+	</section>
+
+
+	<section id="contact" class="vcard">
+		<h1>Kontakt</h1>
+
+		<div class="box small">
+			<h2>Adresa</h2>
+
+			<div>
+				<p><span class="fn">David Grudl</span><br>
+				<span class="adr"><span class="street-address">Anny Rybníčkové 8</span><br>
+				<span class="postal-code">15500</span> <span class="locality">Praha – Stodůlky</span></p>
+
+				<p>E-mail <a href="mailto:david&#64;grudl.com" class="email">david&#64;<!---->grudl.com</a></p>
+			</div>
+		</div>
+
+		<div class="box small">
+			<h2>Obchodní a fakturační údaje</h2>
+			<div>
+				<p><span class="adr"><span class="street-address">Zahradní 20</span><br>
+				<span class="postal-code">66441</span> <span class="locality">Brno – Troubsko</span></span></p>
+
+				<p>IČ: 69663963<br>
+				DIČ: CZ7801233561 (plátce DPH)</p>
+			</div>
+		</div>
+
+
+		<div class="box clear">
+			<h2>Bankovní spojení</h2>
+			<div>
+				<p>670100–2200142627 / 6210 (mBank)<br>
+				<small>IBAN: CZ62 6210 6701 0022 0014 2627, BIC: BREXCZPP</small></p>
+			</div>
+		</div>
+
+
+		<div class="box">
+			<div>
+				<p class="tiny">Zapsáno na obecním živnostenském úřadě Městského úřadu Šlapanice č. j. OŽÚ/45768-06/10858-2006/Seh, ev. č. 370303-4306;
+				č. j. OŽÚ/45770-06/10858-2006/Seh, ev. č. 370401-11877; č. j. OŽÚ/45771-06/10858-2006/Seh, ev. č. 370401-11925;
+				č. j. OŽÚ/48245-06/10858-2006/Seh, ev. č. 370401-13681; č. j. OŽÚ/48246-06/10858-2006/Seh, ev. č. 370401-13682</p>
+			</div>
+		</div>
+	</section>
+
+	<footer>&copy; David Grudl</footer>
+</div>
