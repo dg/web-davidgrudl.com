@@ -4,13 +4,13 @@ use Nette\Application\Routers\Route;
 
 
 // Load libraries
-require __DIR__ . '/app/libs/nette.min.php';
+require __DIR__ . '/app/libs/nette.phar';
 require __DIR__ . '/app/libs/feed.class.php';
 require __DIR__ . '/app/libs/twitter.class.php';
 require __DIR__ . '/app/libs/texy.min.php';
 
 
-$configurator = new Nette\Config\Configurator;
+$configurator = new Nette\Configurator;
 
 // Enable Nette Debugger for error visualisation & logging
 $configurator->enableDebugger(__DIR__ . '/app/log');
@@ -26,9 +26,10 @@ $container = $configurator->createContainer();
 
 // Setup routes
 // http://davidgrudl.com/[cs|en]
-$container->router[] = new Route('[<lang (?-i)cs|en>]', function($presenter, $lang) use ($container) {
+$router = $container->getService('router');
+$router[] = new Route('[<lang (?-i)cs|en>]', function($presenter, $lang) use ($container) {
 	if (!$lang) {
-		$lang = $container->httpRequest->detectLanguage(array('en', 'cs')) ?: 'cs';
+		$lang = $container->getService('httpRequest')->detectLanguage(array('en', 'cs')) ?: 'cs';
 		return $presenter->redirectUrl($lang);
 	}
 
@@ -61,7 +62,7 @@ $container->router[] = new Route('[<lang (?-i)cs|en>]', function($presenter, $la
 
 
 // http://davidgrudl.com/sources
-$container->router[] = new Route('sources', function($presenter) {
+$router[] = new Route('sources', function($presenter) {
 
 	$template = $presenter->createTemplate()
 		->setFile(__DIR__ . '/app/sources.latte');
@@ -74,4 +75,4 @@ $container->router[] = new Route('sources', function($presenter) {
 
 
 // Run the application!
-$container->application->run();
+$container->getService('application')->run();

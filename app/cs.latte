@@ -1,5 +1,5 @@
 {layout "@layout.latte"}
-{block #content}
+{block content}
 
 <nav id="menu">
 	<ul>
@@ -139,15 +139,15 @@ Framework. O pár měsíců později se s přítelkyní a psem stěhují do Prah
 		<div class="box">
 			<div>
 				<ul>
-				{foreach $context->twitterDavidGrudl->load(Twitter::ME)->status as $status}
+				{foreach $context->twitterDavidGrudl->load(Twitter::ME) as $status}
 				{continueIf (string) $status->in_reply_to_status_id}
 				{breakIf $iterations > 3}
-					<li>{!$status->text|tweet}</li>
+					<li>{$status|tweet|noescape}</li>
 				{/foreach}
 				</ul>
 
-				<p><a href="http://twitter.com/DavidGrudl">…more on Twitter</a> or
-				<a href="https://plus.google.com/118037652330553015627/posts">Google+</a></p>
+				<p><a href="http://twitter.com/DavidGrudl">…more on Twitter</a>, <a href="/tweets/davidgrudl/">in archive</a> or
+				<a href="https://plus.google.com/115467698705516843154/posts">Google+</a></p>
 			</div>
 		</div>
 
@@ -156,13 +156,13 @@ Framework. O pár měsíců později se s přítelkyní a psem stěhují do Prah
 		<div class="box">
 			<div>
 				<ul>
-				{foreach $context->twitterGeekovo->load(Twitter::ME)->status as $status}
+				{foreach $context->twitterGeekovo->load(Twitter::ME) as $status}
 				{continueIf (string) $status->in_reply_to_status_id}
 				{breakIf $iterations > 3}
-					<li>{!$status->text|tweet}</li>
+					<li>{$status|tweet|noescape}</li>
 				{/foreach}
 				</ul>
-				<p><a href="http://twitter.com/geekovo">…more on Twitter</a></p>
+				<p><a href="http://twitter.com/geekovo">…more on Twitter</a> or <a href="/tweets/geekovo/">in archive</a></p>
 			</div>
 		</div>
 	</section>
