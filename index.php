@@ -27,7 +27,7 @@ $container = $configurator->createContainer();
 // Setup routes
 // http://davidgrudl.com/[cs|en]
 $router = $container->getService('router');
-$router[] = new Route('[<lang (?-i)cs|en>]', function($presenter, $lang) use ($container) {
+$router[] = new Route('[<lang (?-i)cs|en>]', function ($presenter, $lang) use ($container) {
 	if (!$lang) {
 		$lang = $container->getService('httpRequest')->detectLanguage(array('en', 'cs')) ?: 'cs';
 		return $presenter->redirectUrl($lang);
@@ -38,7 +38,7 @@ $router[] = new Route('[<lang (?-i)cs|en>]', function($presenter, $lang) use ($c
 		->setFile(__DIR__ . '/app/' . $lang . '.latte');
 
 	// register template helpers like {$foo|date}
-	$template->registerHelper('date', function($date) use ($lang) {
+	$template->registerHelper('date', function ($date) use ($lang) {
 		if ($lang === 'en') {
 			return date('F j, Y', (int) $date);
 		} else {
@@ -48,11 +48,11 @@ $router[] = new Route('[<lang (?-i)cs|en>]', function($presenter, $lang) use ($c
 		}
 	});
 
-	$template->registerHelper('tweet', function($s) {
+	$template->registerHelper('tweet', function ($s) {
 		return Twitter::clickable($s);
 	});
 
-	$template->registerHelper('rss', function($path) {
+	$template->registerHelper('rss', function ($path) {
 		return Feed::loadRss($path);
 	});
 
@@ -62,12 +62,12 @@ $router[] = new Route('[<lang (?-i)cs|en>]', function($presenter, $lang) use ($c
 
 
 // http://davidgrudl.com/sources
-$router[] = new Route('sources', function($presenter) {
+$router[] = new Route('sources', function ($presenter) {
 
 	$template = $presenter->createTemplate()
 		->setFile(__DIR__ . '/app/sources.latte');
 
-	$template->registerHelper('source', function($file, $lang = NULL) {
+	$template->registerHelper('source', function ($file, $lang = NULL) {
 		return preg_replace('#<br ?/?>#', '', highlight_file($file, TRUE));
 	});
 	return $template;
