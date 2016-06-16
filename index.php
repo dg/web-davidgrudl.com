@@ -7,7 +7,7 @@ use Nette\Application\Routers\Route;
 require __DIR__ . '/app/libs/nette.phar';
 require __DIR__ . '/app/libs/feed.class.php';
 require __DIR__ . '/app/libs/twitter.class.php';
-require __DIR__ . '/app/libs/texy.min.php';
+require __DIR__ . '/app/libs/texy.phar';
 
 
 $configurator = new Nette\Configurator;
