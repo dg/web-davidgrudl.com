@@ -124,7 +124,7 @@ Framework. O pár měsíců později se s přítelkyní a psem stěhují do Prah
 		<div class="box">
 			<div>
 				<ul>
-				{foreach $template->rss('http://www.skoleniphp.cz/feed.xml')->item as $item}
+				{foreach $rss('http://www.skoleniphp.cz/feed.xml')->item as $item}
 					<li><span class="date">{$item->description}</span><br><a href="{$item->link}">Školení {$item->title}</a></li>
 				{/foreach}
 				</ul>
@@ -177,7 +177,7 @@ Framework. O pár měsíců později se s přítelkyní a psem stěhují do Prah
 
 			<div>
 				<ul>
-				{foreach $template->rss('http://www.latrine.cz/feed/rss')->item as $item}
+				{foreach $rss('http://www.latrine.cz/feed/rss')->item as $item}
 				{breakIf $iterations > 5}
 					<li><a href="{$item->link}">{$item->title}</a></li>
 				{/foreach}
@@ -192,7 +192,7 @@ Framework. O pár měsíců později se s přítelkyní a psem stěhují do Prah
 
 			<div>
 				<ul>
-				{foreach $template->rss('http://phpfashion.com/feed/rss')->item as $item}
+				{foreach $rss('http://phpfashion.com/feed/rss')->item as $item}
 				{breakIf $iterations > 5}
 					<li><a href="{$item->link}">{$item->title}</a></li>
 				{/foreach}
@@ -208,7 +208,7 @@ Framework. O pár měsíců později se s přítelkyní a psem stěhují do Prah
 		<div class="box">
 			<div>
 				<ul>
-				{foreach $template->rss('http://davidgrudl.com/interviews.xml')->item as $item}
+				{foreach $rss('http://davidgrudl.com/interviews.xml')->item as $item}
 					<li><span class="date right">{$item->timestamp|date}</span> <a href="{$item->link}" n:tag-if="$item->link">{$item->title}</a></li>
 				{/foreach}
 				</ul>
@@ -223,9 +223,9 @@ Framework. O pár měsíců později se s přítelkyní a psem stěhují do Prah
 		<div class="box">
 			<div>
 				<ul>
-				{foreach $template->rss('http://davidgrudl.com/talks.xml')->item as $item}
+				{foreach $rss('http://davidgrudl.com/talks.xml')->item as $item}
 					<li><span class="date right">{$item->timestamp|date}</span> <a href="{$item->link}" n:tag-if="$item->link">{$item->title}</a>
-					<div class="more">{!$item->{'content:encoded'}}</div></li>
+					<div class="more">{$item->{'content:encoded'}|noescape}</div></li>
 				{/foreach}
 				</ul>
 			</div>

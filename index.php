@@ -38,7 +38,7 @@ $router[] = new Route('[<lang (?-i)cs|en>]', function ($presenter, $lang) use ($
 		->setFile(__DIR__ . '/app/' . $lang . '.latte');
 
 	// register template helpers like {$foo|date}
-	$template->registerHelper('date', function ($date) use ($lang) {
+	$template->addFilter('date', function ($date) use ($lang) {
 		if ($lang === 'en') {
 			return date('F j, Y', (int) $date);
 		} else {
@@ -48,15 +48,15 @@ $router[] = new Route('[<lang (?-i)cs|en>]', function ($presenter, $lang) use ($
 		}
 	});
 
-	$template->registerHelper('tweet', function ($s) {
+	$template->addFilter('tweet', function ($s) {
 		return Twitter::clickable($s);
 	});
 
-	$template->registerHelper('rss', function ($path) {
-		return Feed::loadRss($path);
-	});
+	$template->rss = ['Feed', 'loadRss'];
 
-	$template->registerHelper('texy', array(new Texy, 'process'));
+	$template->addFilter('texy', function (Latte\Runtime\FilterInfo $info, $s) {
+		return (new Texy)->process($s);
+	});
 	return $template;
 });
 
@@ -67,9 +67,9 @@ $router[] = new Route('sources', function ($presenter) {
 	$template = $presenter->createTemplate()
 		->setFile(__DIR__ . '/app/sources.latte');
 
-	$template->registerHelper('source', function ($file, $lang = NULL) {
+	$template->source = function ($file, $lang = NULL) {
 		return preg_replace('#<br ?/?>#', '', highlight_file($file, TRUE));
-	});
+	};
 	return $template;
 });
 
