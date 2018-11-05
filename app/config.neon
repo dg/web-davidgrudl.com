@@ -1,12 +1,10 @@
-common:
-	php:
-		date.timezone: Europe/Prague
+php:
+	date.timezone: Europe/Prague
 
-	services:
-		twitterDavidGrudl: Twitter(...secret keys...)
+application:
+	scanDirs: no
 
-		twitterGeekovo: Twitter(...secret keys...)
+services:
+	twitterDavidGrudl: Twitter(...secret keys...)
 
-production < common:
-
-development < common:
+	twitterGeekovo: Twitter(...secret keys...)

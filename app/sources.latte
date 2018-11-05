@@ -17,28 +17,28 @@
 	<section id="soruces">
 		<h1 id="logo" n:block="title">Source codes of this website</h1>
 
-		<p>This site is powered by <a href="http://nette.org">Nette Framework</a> and uses
+		<p>This site is powered by <a href="https://nette.org">Nette Framework</a> and uses
 		templating engine <b>Latte</b>. See how you can use Nette as a micro-framework.
 		View source codes on <a href="https://github.com/dg/davidgrudl.com">Github</a>.</p>
 	</section>
 
 	<h2 id="index-php">index.php</h2>
-	<pre>{$source('app/sources/index.php', 'PHP')|noescape}</pre>
+	<pre>{$source('index.php', 'Php')}</pre>
 
 	<h2 id="config-neon">app/config.neon</h2>
-	<pre>{$source('app/sources/config.neon')|noescape}</pre>
+	<pre>{$source('app/config.neon', 'Javascript')}</pre>
 
 	<h2 id="layout-latte">app/@layout.latte</h2>
-	<pre>{$source('app/sources/@layout.latte', 'HTMLCB')|noescape}</pre>
+	<pre>{$source('app/@layout.latte', 'LatteHtml')}</pre>
 
 	<h2 id="cs-latte">app/cs.latte</h2>
-	<pre>{$source('app/sources/cs.latte', 'HTMLCB')|noescape}</pre>
+	<pre>{$source('app/cs.latte', 'LatteHtml')}</pre>
 
 	<h2 id="en-latte">app/en.latte</h2>
-	<pre>{$source('app/sources/en.latte', 'HTMLCB')|noescape}</pre>
+	<pre>{$source('app/en.latte', 'LatteHtml')}</pre>
 
 	<h2 id="sources-latte">app/sources.latte</h2>
-	<pre>{$source('app/sources/sources.latte', 'HTMLCB')|noescape}</pre>
+	<pre>{$source('app/sources.latte', 'LatteHtml')}</pre>
 
 	<footer>&copy; David Grudl</footer>
 </div>
